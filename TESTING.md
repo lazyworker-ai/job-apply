@@ -63,11 +63,18 @@ When the checklist passes:
    The export copies only tracked files, re-runs the scan, and creates a new
    repository with one commit and no history.
 2. Create a new public repo under the `lazyworker-ai` org and push the
-   exported folder to it.
-3. **Trademark runs in parallel with the open-source launch** (owner's
+   exported folder to it. (Done once: `lazyworker-ai/job-apply`.)
+3. **Every later release:** keep working in the private repo, then
+   ```
+   git clone https://github.com/lazyworker-ai/job-apply ../job-apply
+   python scripts/sync_public.py ../job-apply -m "What changed"
+   git -C ../job-apply show --stat      # review
+   git -C ../job-apply push             # plain push, never force
+   ```
+4. **Trademark runs in parallel with the open-source launch** (owner's
    decision, 2026-11-09): publish first, watch adoption, and file the
    trademark (classes 9 and 42 first) soon after launch. The Apache-2.0
    License does not grant use of the "Lazy Worker" name (section 6), but it
    is not trademark protection — filing early fixes the priority date.
-4. Publish with the README as the repo front page. The skill is Apache-2.0,
+5. Publish with the README as the repo front page. The skill is Apache-2.0,
    free and open source.

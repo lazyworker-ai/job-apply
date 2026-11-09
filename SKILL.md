@@ -132,6 +132,7 @@ Read `references/governance.md` first — it is binding, not advisory.
 | `scripts/setup-local.ps1` | One-click local install (Path A): Python + websockets + Bridge v1.4.1 download + start script + health check. Run once; then load the extension by hand. |
 | `scripts/selftest.py` | Read-only self-test through the bridge: health, tabs, login, one-keyword collection per platform. Never applies. |
 | `scripts/prepublish_check.py` | Maintainers: privacy scan before any public release (IPs, phone/ID numbers, keys, job IDs, local deny-list). |
-| `scripts/export_public.py` | Maintainers: export a clean, history-free copy for the public repo (runs the privacy scan). |
+| `scripts/export_public.py` | Maintainers: first public release only — clean, history-free export (runs the privacy scan). |
+| `scripts/sync_public.py` | Maintainers: every later release — mirror into a clone of the public repo as one normal commit (runs the privacy scan, never pushes). |
 | `criteria.example.yaml` | Screening criteria template. |
 | `TESTING.md` | How to test with another AI before publishing. |
