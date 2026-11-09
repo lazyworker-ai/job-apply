@@ -1,0 +1,68 @@
+# Screening criteria — copy to criteria.yaml and fill in your own values.
+# The agent screens against this file and nothing else. Nothing here is a
+# default: every field is yours to set. The values below are illustrative
+# examples only — replace them with your own.
+
+employment_type: full-time          # full-time | part-time | internship
+city: Shenzhen                      # city name; adapters map it to codes
+min_salary_monthly: 25000           # minimum monthly salary in CNY; yearly figures are converted before comparing
+
+titles:
+  - 投资总监
+  - 副总裁
+  - 总经理助理
+  - 董事长助理
+  - 高级投资经理
+
+direction: finance                  # industry / function direction, e.g. finance
+
+# Hard exclusions — a job matching any of these is dropped, no exceptions.
+# Borderline cases go to the user for a call, never auto-apply.
+exclude_industries:
+  - 保险
+  - 证券私募/券商
+  - 医疗器械/制药
+  - 房地产
+
+exclude_role_traps:
+  - 销售伪装岗
+  - 投资者关系
+  - 纯融资总监
+  - 名义投资总监实为融资
+  - 战略运营负责人
+  - 董秘
+  - 债务融资为主
+  - 文旅
+  - 财务岗
+  - 政企项目投资拓展
+
+exclude_client_traps:
+  - 高净值客户
+  - 财富管理
+  - 私行
+  - C端开发
+
+exclude_salary:
+  max_monthly: 100000               # abnormally high postings are usually scams or sales — never apply, never engage
+
+# Companies never to touch, kept by you. Placeholders below — replace them.
+company_blocklist:
+  - 示例公司A
+  - 示例公司B
+
+# Optional: also block these companies inside each platform (so they can't
+# see your resume). The agent does this only when you explicitly ask.
+platform_block_on_request: true
+
+# Keywords to search per platform (the agent searches one keyword at a time).
+keywords:
+  - 投资总监
+  - 副总裁
+  - 总经理助理
+  - 高级投资经理
+
+# Reply monitoring schedule (local time). The agent scans message centres at
+# these times and drafts replies only — nothing is sent without your nod.
+reply_check_times:
+  - "09:45"
+  - "20:45"

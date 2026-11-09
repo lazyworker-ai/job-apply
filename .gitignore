@@ -1,0 +1,4 @@
+scripts/selftest_report.json
+__pycache__/
+.bridge.env
+.prepublish-denylist
